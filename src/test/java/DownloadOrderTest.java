@@ -39,8 +39,7 @@ public class DownloadOrderTest {
         ArrayList<String> listHeshIngredients = donwloadIngredients.path("data._id");
         ingredients.add(listHeshIngredients.get(random.nextInt(listHeshIngredients.size())));
         ingredients.add(listHeshIngredients.get(random.nextInt(listHeshIngredients.size())));
-        OrderCreate orderCreate = new OrderCreate(ingredients);
-        Response createOrderResponse = clientOrderCreate.orderAutoCreate(token, orderCreate);
+
 
         Response response = clientOrderDownload.orderAutoDownload(token);
         Assert.assertEquals(1, checkOrder.downloadOrderAutoUser(response).size());
